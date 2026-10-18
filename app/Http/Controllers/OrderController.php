@@ -27,14 +27,13 @@ class OrderController extends Controller
 
         return redirect('/#form-pemesanan')->with('success', 'Pesanan berhasil disimpan!');
  }
-
-public function index()
+    public function index()
 {
     $orders = \App\Models\Order::latest()->get();
     
     return view('admin.orders', compact('orders'));
 }
-public function updateStatus(Request $request, $id)
+    public function updateStatus(Request $request, $id)
 {
     $order = \App\Models\Order::findOrFail($id);
     
