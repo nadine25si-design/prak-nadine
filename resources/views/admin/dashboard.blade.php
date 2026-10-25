@@ -55,6 +55,8 @@
     <div class="admin-app">
         <!-- Main Wrapper -->
         <div class="admin-wrapper" id="admin-wrapper">
+            
+        @include('layouts.partials.sidebar')
 
         <!-- Header -->
         <header class="admin-header">
@@ -165,53 +167,6 @@
                 </div>
             </nav>
         </header>
-
-        <!-- Sidebar -->
-        <!-- Sidebar -->
-<!-- Sidebar -->
-<aside class="admin-sidebar" id="admin-sidebar">
-    <div class="sidebar-content">
-        <nav class="sidebar-nav">
-            <ul class="nav flex-column">
-                
-                <!-- Menu Utama -->
-                <li class="nav-item">
-                    <a class="nav-link active" href="{{ url('/admin/dashboard') }}">
-                        <i class="bi bi-speedometer2"></i>
-                        <span>Dashboard</span>
-                    </a>
-                </li>
-                
-                <li class="nav-item">
-    <a class="nav-link" href="{{ route('laundry.index') }}">
-        <i class="bi bi-bag-check"></i>
-        <span>Daftar Pesanan</span>
-    </a>
-</li>
-
-                <li class="nav-item">
-    <a class="nav-link text-dark" href="{{ route('laundry.create') }}">
-        <i class="bi bi-plus-circle me-2"></i>
-        <span>Tambah Pesanan</span>
-    </a>
-</li>
-
-                <!-- Section Pengaturan -->
-                <li class="nav-item mt-3">
-                    <small class="text-muted px-3 text-uppercase fw-bold">Pengaturan</small>
-                </li>
-                
-                <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <i class="bi bi-gear"></i>
-                        <span>Pengaturan Sistem</span>
-                    </a>
-                </li>
-
-            </ul>
-        </nav>
-    </div>
-</aside>
 
 <!-- Sidebar Backdrop (mobile overlay) -->
 <div class="sidebar-backdrop" aria-hidden="true"></div>
@@ -700,7 +655,6 @@ function toggleAdminQris() {
     }
 }
 
-// -> Tempel/letakkan fungsi calculateAdminTotal di sini:
 function calculateAdminTotal() {
     const serviceSelect = document.getElementById('adminServiceSelect');
     const qtyInput = document.getElementById('adminQtyInput');

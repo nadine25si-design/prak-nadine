@@ -5,6 +5,7 @@ use App\Http\Controllers\OrderController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\MatakuliahController;
 use App\Http\Controllers\QuestionController;
+use App\Http\Controllers\UserController;
 
 // --- HALAMAN UTAMA & PENGGUNA ---
 Route::get('/', function () {
@@ -38,3 +39,5 @@ Route::get('/admin/orders', [OrderController::class, 'index'])
     ->name('laundry.index');
 
 Route::patch('/pesanan/{id}/status', [OrderController::class, 'updateStatus'])->name('pesanan.updateStatus');
+
+Route::resource('/admin/users', UserController::class)->names('users');
