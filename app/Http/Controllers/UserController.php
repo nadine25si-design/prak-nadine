@@ -11,7 +11,13 @@ class UserController extends Controller
     public function index()
     {
         $users = User::latest()->get();
+
         return view('admin.users.index', compact('users'));
+    }
+
+    public function show(User $user)
+    {
+        return view('admin.users.show', compact('user'));
     }
 
     public function create()
@@ -30,10 +36,12 @@ class UserController extends Controller
         User::create([
             'name'     => $request->name,
             'email'    => $request->email,
-            'password' => Hash::make($request->password), // Enkripsi password sesuai modul
+            'password' => Hash::make($request->password),
         ]);
 
-        return redirect()->route('users.index')->with('success', 'User berhasil ditambahkan!');
+        return redirect()
+            ->route('users.index')
+            ->with('success', 'User berhasil ditambahkan!');
     }
 
     public function edit(User $user)
@@ -54,18 +62,26 @@ class UserController extends Controller
         ];
 
         if ($request->filled('password')) {
-            $request->validate(['password' => 'string|min:6']);
+            $request->validate([
+                'password' => 'string|min:6',
+            ]);
+
             $data['password'] = Hash::make($request->password);
         }
 
         $user->update($data);
 
-        return redirect()->route('users.index')->with('success', 'User berhasil diperbarui!');
+        return redirect()
+            ->route('users.index')
+            ->with('success', 'User berhasil diperbarui!');
     }
 
     public function destroy(User $user)
     {
         $user->delete();
-        return redirect()->route('users.index')->with('success', 'User berhasil dihapus!');
+
+        return redirect()
+            ->route('users.index')
+            ->with('success', 'User berhasil dihapus!');
     }
 }

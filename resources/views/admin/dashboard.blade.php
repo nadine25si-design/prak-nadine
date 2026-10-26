@@ -176,6 +176,13 @@
         <!-- Main Content -->
         <main id="main-content" class="admin-main">
             <div class="container-fluid p-4 p-lg-4">
+                @if(session('success'))
+                    <div class="alert alert-success alert-dismissible fade show shadow-sm mb-4" role="alert">
+                        <i class="bi bi-check-circle-fill me-2 fs-5"></i>
+                        <strong>Berhasil!</strong> {{ session('success') }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                @endif
                 <!-- Page Header -->
                 <div class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center gap-3 mb-4">
                     <div>
