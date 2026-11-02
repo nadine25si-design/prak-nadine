@@ -22,12 +22,18 @@ class DashboardController extends Controller
     // 4. Ambil semua pesanan terbaru
     $recentOrders = \App\Models\Order::latest()->get();
 
+    // 5. Total Kategori (Eloquent) & Total Paket (Query Builder)
+    $totalCategories = \App\Models\Category::count();
+    $totalPackages = \Illuminate\Support\Facades\DB::table('packages')->count();
+
     return view('admin.dashboard', compact(
         'totalOrders',
         'pendingOrders',
         'completedOrders',
         'todayOrdersCount',
-        'recentOrders'
+        'recentOrders',
+        'totalCategories',
+        'totalPackages'
     ));
 }
 }

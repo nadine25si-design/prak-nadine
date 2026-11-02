@@ -298,6 +298,52 @@
     </div>
 </div>
 
+                <!-- Quick Access: Kategori Layanan (Eloquent) & Paket Laundry (Query Builder) -->
+                <div class="row g-4 mb-4">
+                    <div class="col-md-6">
+                        <div class="card border-0 shadow-sm rounded-3 h-100 p-3 bg-white">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div class="d-flex align-items-center">
+                                    <div class="bg-primary bg-opacity-10 text-primary p-3 rounded-circle me-3">
+                                        <i class="bi bi-tags fs-4"></i>
+                                    </div>
+                                    <div>
+                                        <div class="d-flex align-items-center gap-2">
+                                            <h5 class="fw-bold mb-0">Kategori Layanan</h5>
+                                            <span class="badge bg-primary text-white small">Eloquent ORM</span>
+                                        </div>
+                                        <p class="text-muted small mb-0 mt-1">Total: <strong>{{ $totalCategories ?? 0 }} Kategori</strong> aktif</p>
+                                    </div>
+                                </div>
+                                <a href="{{ route('categories.index') }}" class="btn btn-outline-primary btn-sm fw-semibold">
+                                    Kelola <i class="bi bi-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card border-0 shadow-sm rounded-3 h-100 p-3 bg-white">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div class="d-flex align-items-center">
+                                    <div class="bg-success bg-opacity-10 text-success p-3 rounded-circle me-3">
+                                        <i class="bi bi-box-seam fs-4"></i>
+                                    </div>
+                                    <div>
+                                        <div class="d-flex align-items-center gap-2">
+                                            <h5 class="fw-bold mb-0">Paket Laundry</h5>
+                                            <span class="badge bg-success text-white small">Query Builder</span>
+                                        </div>
+                                        <p class="text-muted small mb-0 mt-1">Total: <strong>{{ $totalPackages ?? 0 }} Paket</strong> terdaftar</p>
+                                    </div>
+                                </div>
+                                <a href="{{ route('packages.index') }}" class="btn btn-outline-success btn-sm fw-semibold">
+                                    Kelola <i class="bi bi-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Chart Section -->
                 <div class="row g-4 mb-4">
                     <div class="col-lg-8">

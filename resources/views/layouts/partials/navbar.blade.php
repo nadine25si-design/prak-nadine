@@ -1,40 +1,64 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm sticky-top">
-    <div class="container">
-        <!-- Logo & Brand -->
-        <a class="navbar-brand d-flex align-items-center gap-2 fw-bold" href="{{ url('/') }}">
-            <i class="bi bi-droplet-half fs-4"></i>
-            <span>Laundry Kita</span>
-        </a>
-
-        <!-- Mobile Toggle Button -->
-        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarGuestContent" aria-controls="navbarGuestContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <!-- Navbar Links -->
-        <div class="collapse navbar-collapse" id="navbarGuestContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-3">
-                <li class="nav-item">
-                    <a class="nav-link text-white {{ Request::is('/') ? 'active fw-bold border-bottom border-2 border-white' : 'opacity-75' }}" href="{{ url('/') }}">
-                        <i class="bi bi-house-door me-1"></i> Home
+<header>
+    <!-- Header Start -->
+    <div class="header-area">
+        <div class="main-header header-sticky">
+            <div class="header-left">
+                <div class="logo">
+                    <a href="{{ url('/') }}">
+                        <img src="{{ asset('assets/img/logo/logo laundry_kita.png') }}"
+                             alt="Logo Laundry Kita"
+                             style="width: 180px; height: auto;">
                     </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-white {{ Request::is('pesan-laundry*') ? 'active fw-bold border-bottom border-2 border-white' : 'opacity-75' }}" href="{{ url('/pesan-laundry') }}">
-                        <i class="bi bi-bag-plus me-1"></i> Pesan Laundry
-                    </a>
-                </li>
-            </ul>
+                </div>
 
-            <!-- Right Buttons: Login & Register -->
-            <div class="d-flex align-items-center gap-2">
-                <a href="{{ route('login') }}" class="btn {{ Request::is('auth*') ? 'btn-light text-primary fw-bold' : 'btn-outline-light' }}">
-                    <i class="bi bi-box-arrow-in-right me-1"></i> Login
+                <div class="menu-wrapper d-flex align-items-center">
+                    <!-- Main-menu -->
+                    <div class="main-menu d-none d-lg-block">
+                        <nav> 
+                            <ul id="navigation">                                                                                          
+                                <li class="{{ Request::is('/') ? 'active' : '' }}"><a href="{{ url('/') }}">Home</a></li>
+                                <li><a href="{{ url('/#about') }}">About</a></li>
+                                <li><a href="{{ url('/#services') }}">Services</a></li>
+                                <li><a href="{{ url('/#paket-laundry') }}">Paket</a></li>
+                                <li><a href="{{ url('/#form-pemesanan') }}">Pesan Laundry</a></li>
+                                <li><a href="{{ url('/#location') }}">Contact</a></li>
+                                <li class="d-lg-none {{ Request::is('auth*') ? 'active' : '' }}"><a href="{{ route('login') }}">Login</a></li>
+                                <li class="d-lg-none {{ Request::is('register*') ? 'active' : '' }}"><a href="{{ route('register') }}">Register</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div> 
+            <div class="header-right d-none d-lg-block">
+                <a href="https://wa.me/6281365649826"
+                   class="header-btn1"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    <img src="{{ asset('assets/img/icon/call.png') }}" alt="">
+                    WhatsApp
                 </a>
-                <a href="{{ route('register') }}" class="btn {{ Request::is('register*') ? 'btn-light text-primary fw-bold' : 'btn-warning text-dark fw-semibold' }}">
-                    <i class="bi bi-person-plus me-1"></i> Register
+
+                <a href="tel:082384432421" class="header-btn1">
+                    Telepon
                 </a>
+
+                <a href="{{ route('login') }}" class="header-btn1" style="background: #f0f4ff; color: #4361ee; font-weight: 600; padding: 10px 18px; border-radius: 30px; border: 1px solid #d0dbff; transition: 0.3s;">
+                    <i class="ti-user" style="margin-right: 4px;"></i> Login
+                </a>
+
+                <a href="{{ route('register') }}" class="header-btn1" style="background: #4361ee; color: #ffffff; font-weight: 600; padding: 10px 18px; border-radius: 30px; border: 1px solid #4361ee; transition: 0.3s;">
+                    <i class="ti-pencil-alt" style="margin-right: 4px;"></i> Register
+                </a>
+
+                <a href="{{ url('/#form-pemesanan') }}" class="header-btn2">
+                    Pesan Laundry
+                </a>
+            </div>
+            <!-- Mobile Menu -->
+            <div class="col-12">
+                <div class="mobile_menu d-block d-lg-none"></div>
             </div>
         </div>
     </div>
-</nav>
+    <!-- Header End -->
+</header>

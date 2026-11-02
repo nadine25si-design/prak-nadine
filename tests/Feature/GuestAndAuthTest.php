@@ -76,14 +76,17 @@ class GuestAndAuthTest extends TestCase
      */
     public function test_register_creates_user_and_redirects_to_login(): void
     {
+        $email = 'nadine_test_' . time() . '_' . rand(1000, 9999) . '@example.com';
+
         $response = $this->post('/register', [
             'name' => 'Nadine Test',
-            'email' => 'nadine_test@example.com',
+            'email' => $email,
             'password' => 'password123',
             'password_confirmation' => 'password123',
         ]);
 
         $response->assertRedirect(route('login'));
         $response->assertSessionHas('success');
+        $this->assertDatabaseHas('users', ['email' => $email]);
     }
 }

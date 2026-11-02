@@ -7,6 +7,9 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\MatakuliahController;
 use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\PackageController;
+use Illuminate\Support\Facades\DB;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,7 +23,19 @@ use App\Http\Controllers\UserController;
 
 // 1. Home ( / )
 Route::get('/', function () {
-    return view('home');
+    // Ambil paket laundry aktif dengan LEFT JOIN ke kategori (Query Builder)
+    $packages = DB::table('packages')
+        ->leftJoin('categories', 'packages.category_id', '=', 'categories.id')
+        ->select(
+            'packages.*',
+            'categories.name as category_name',
+            'categories.icon as category_icon'
+        )
+        ->where('packages.is_active', '=', 1)
+        ->orderBy('packages.id', 'asc')
+        ->get();
+
+    return view('home', compact('packages'));
 })->name('home');
 
 // 2. Login ( /auth )
@@ -80,3 +95,9 @@ Route::patch('/pesanan/{id}/status', [OrderController::class, 'updateStatus'])
 
 // MANAJEMEN USER ADMIN
 Route::resource('/admin/users', UserController::class)->names('users');
+
+// CRUD 1: MANAJEMEN KATEGORI LAYANAN ADMIN (Eloquent ORM)
+Route::resource('/admin/categories', CategoryController::class)->names('categories');
+
+// CRUD 2: MANAJEMEN PAKET LAUNDRY ADMIN (Query Builder)
+Route::resource('/admin/packages', PackageController::class)->names('packages');

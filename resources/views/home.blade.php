@@ -1,133 +1,660 @@
 @extends('layouts.guest')
 
-@section('title', 'Home - Laundry Kita')
+@section('title', 'Laundry Kita - Clean Clothes, Happy You!')
 
 @section('content')
-<!-- Hero Section -->
-<section class="hero-section text-center text-lg-start">
-    <div class="container">
-        <div class="row align-items-center g-4">
-            <div class="col-lg-7">
-                <span class="badge bg-warning text-dark px-3 py-2 rounded-pill fw-semibold mb-3">
-                    <i class="bi bi-stars me-1"></i> Layanan Laundry Terbaik di Rumbai
-                </span>
-                <h1 class="display-4 fw-bold mb-3">
-                    Pakaian Bersih, Harum, & Rapi Tanpa Ribet
-                </h1>
-                <p class="lead mb-4 text-white-50">
-                    Laundry Kita menyediakan layanan cuci komplit, dry cleaning, setrika kilat, dan antar-jemput langsung ke rumah atau kos Anda.
-                </p>
-                <div class="d-flex flex-wrap gap-3 justify-content-center justify-content-lg-start">
-                    <a href="{{ url('/pesan-laundry') }}" class="btn btn-warning btn-lg px-4 fw-bold shadow-sm">
-                        <i class="bi bi-cart-plus me-1"></i> Pesan Laundry Sekarang
-                    </a>
-                    <a href="{{ route('login') }}" class="btn btn-outline-light btn-lg px-4 fw-semibold">
-                        <i class="bi bi-box-arrow-in-right me-1"></i> Masuk / Login
-                    </a>
+<main>
+    <!--? slider Area Start-->
+    <section class="slider-area hero-overly">
+        <div class="slider-active">
+            <!-- Single Slider -->
+            <div class="single-slider slider-height d-flex align-items-center">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-7 col-lg-9 col-md-10 col-sm-9">
+                            <div class="hero__caption">
+                                <h1 data-animation="fadeInLeft" data-delay="0.2s"
+                                    style="font-family: inherit; font-size: 46px; line-height: 1.2; font-weight: 600;">
+                                    Laundry Kita, Clean Clothes, Happy You!
+                                </h1>
+
+                                <p data-animation="fadeInLeft" data-delay="0.4s"
+                                   style="font-family: inherit; font-size: 18px; line-height: 1.6; max-width: 580px;">
+                                    Layanan laundry praktis, bersih, dan terpercaya.
+                                    Kami merawat pakaianmu agar selalu bersih, wangi, dan siap digunakan.
+                                </p>
+                                <a href="#services" class="btn hero-btn" data-animation="fadeInLeft" data-delay="0.7s">Explore Services</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>          
+            </div>
+        </div>
+    </section>
+    <!-- slider Area End-->
+
+    <!--? Services Area Start -->
+    <section id="services" class="services-area pt-top border-bottom pb-20 mb-60">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-7 col-lg-8">
+                    <div class="section-tittle text-center mb-55">
+                        <span class="element">Cara Kerja Laundry Kita</span>
+                        <h2>Praktis dari Awal hingga Selesai</h2>
+                    </div>
                 </div>
             </div>
-            <div class="col-lg-5 text-center">
-                <div class="bg-white bg-opacity-10 p-4 rounded-4 border border-light border-opacity-25 shadow">
-                    <i class="bi bi-shield-check text-warning display-1 mb-3 d-block"></i>
-                    <h4 class="fw-bold text-white mb-2">Higienis & Terjamin</h4>
-                    <p class="text-white-70 small mb-3">
-                        1 Mesin Cuci khusus untuk 1 Pelanggan. Menggunakan deterjen premium ramah serat kain dan pewangi tahan lama hingga 14 hari.
-                    </p>
-                    <div class="d-flex justify-content-around text-center pt-2 border-top border-white border-opacity-25">
-                        <div>
-                            <h5 class="fw-bold mb-0 text-white">5.000+</h5>
-                            <small class="text-white-50">Pelanggan</small>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-sm-6">
+                    <div class="single-cat text-center">
+                        <div class="cat-icon">
+                            <img src="{{ asset('assets/img/icon/services-icon1.svg') }}" alt="">
                         </div>
-                        <div>
-                            <h5 class="fw-bold mb-0 text-white">99%</h5>
-                            <small class="text-white-50">Puas</small>
+                        <div class="cat-cap">
+                            <h5><a href="#services">Pilih Layanan Laundry</a></h5>
+                            <p>Pilih layanan kiloan atau satuan sesuai kebutuhanmu.</p>
                         </div>
-                        <div>
-                            <h5 class="fw-bold mb-0 text-white">1 Hari</h5>
-                            <small class="text-white-50">Express</small>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6">
+                    <div class="single-cat text-center">
+                        <div class="cat-icon">
+                            <img src="{{ asset('assets/img/icon/services-icon2.svg') }}" alt="">
+                        </div>
+                        <div class="cat-cap">
+                            <h5><a href="#form-pemesanan">Pesan & Jadwalkan</a></h5>
+                            <p>Isi formulir pesanan dan tentukan alamat serta jadwal penjemputan.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6">
+                    <div class="single-cat text-center">
+                        <div class="cat-icon">
+                            <img src="{{ asset('assets/img/icon/services-icon3.svg') }}" alt="">
+                        </div>
+                        <div class="cat-cap">
+                            <h5><a href="#services">Lacak Pesanan</a></h5>
+                            <p>Pantau status cucianmu hingga selesai dan siap diantar.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+    <!-- Services End -->
 
-<!-- Layanan Unggulan -->
-<section class="py-5">
-    <div class="container py-4">
-        <div class="text-center mb-5">
-            <h6 class="text-primary fw-bold text-uppercase letter-spacing-1">Layanan Kami</h6>
-            <h2 class="fw-bold">Pilihan Paket Cuci Hemat & Praktis</h2>
-            <p class="text-muted">Pilih paket sesuai kebutuhan aktivitas dan rutinitas harian Anda.</p>
+    <!-- Offer-services Start -->
+    <section class="offer-services pb-bottom2">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-7 col-lg-8">
+                    <div class="section-tittle text-center mb-55">
+                        <span class="element">LAYANAN KAMI</span>
+                        <h2>Layanan Laundry Kita</h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row no-gutters laundry-services">
+                <!-- Baris 1: Foto Laundry Kiloan -->
+                <div class="col-lg-6 col-md-6">
+                    <div class="service-photo">
+                        <img src="{{ asset('assets/img/gallery/offers1.png') }}"
+                             alt="Laundry Kiloan">
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <div class="service-info">
+                        <div>
+                            <img class="service-icon"
+                                 src="{{ asset('assets/img/icon/offers-icon1.png') }}"
+                                 alt="">
+                            <h3>Laundry Kiloan</h3>
+                            <p>Pakaianmu dicuci dengan teliti agar bersih, wangi, dan nyaman digunakan kembali.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Baris 2: Kotak Biru dan Foto Setrika -->
+                <div class="col-lg-6 col-md-6 order-2 order-lg-3">
+                    <div class="service-info">
+                        <div>
+                            <img class="service-icon"
+                                 src="{{ asset('assets/img/icon/offers-icon1.png') }}"
+                                 alt="">
+                            <h3>Setrika Pakaian</h3>
+                            <p>Pakaian disetrika dengan rapi agar siap digunakan dan terlihat lebih terawat.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 order-3 order-lg-4">
+                    <div class="service-photo">
+                        <img src="{{ asset('assets/img/gallery/offers4.png') }}"
+                             alt="Setrika Pakaian"
+                             style="object-position: center 65%;">
+                    </div>
+                </div>
+
+                <!-- Baris 3: Foto Antar Jemput dan Kotak Biru -->
+                <div class="col-lg-6 col-md-6 order-4 order-lg-5">
+                    <div class="service-photo">
+                        <img src="{{ asset('assets/img/gallery/antar-jemput.png') }}"
+                             alt="Kurir mengantar pakaian laundry">
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 order-5 order-lg-6">
+                    <div class="service-info">
+                        <div>
+                            <img class="service-icon"
+                                 src="{{ asset('assets/img/icon/offers-icon1.png') }}"
+                                 alt="">
+                            <h3>Antar Jemput Laundry</h3>
+                            <p>Cucian dijemput dan diantar kembali agar lebih praktis dan hemat waktu.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+    </section>
+    <!-- Offer-services End -->
 
-        <div class="row g-4">
-            <!-- Layanan 1 -->
-            <div class="col-md-4">
-                <div class="card card-custom h-100 p-4 bg-white border">
-                    <div class="d-inline-flex align-items-center justify-content-center bg-primary bg-opacity-10 text-primary rounded-3 p-3 mb-4" style="width: 60px; height: 60px;">
-                        <i class="bi bi-basket3 fs-3"></i>
+    <style>
+    .laundry-services {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        overflow: hidden;
+    }
+    .laundry-services > .col-lg-6 {
+        flex: 0 0 50%;
+        width: 50%;
+        max-width: 50%;
+        padding: 0;
+    }
+    .laundry-services .service-photo,
+    .laundry-services .service-info {
+        width: 100%;
+        height: 390px;
+    }
+    .laundry-services .service-photo {
+        overflow: hidden;
+    }
+    .laundry-services .service-photo img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+    .laundry-services .col-lg-6:nth-child(4) .service-photo img {
+        object-position: center 65%;
+    }
+    .laundry-services .service-info {
+        background-color: #6480ff;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 35px;
+        box-sizing: border-box;
+    }
+    .laundry-services .service-info h3 {
+        color: #fff;
+        font-size: 25px;
+        font-weight: 600;
+        margin: 20px 0 15px;
+    }
+    .laundry-services .service-info p {
+        color: #fff;
+        font-size: 16px;
+        line-height: 1.8;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+    .laundry-services .service-icon {
+        width: 65px;
+        height: 65px;
+        object-fit: contain;
+    }
+    @media (max-width: 767px) {
+        .laundry-services > .col-lg-6 {
+            flex: 0 0 100%;
+            width: 100%;
+            max-width: 100%;
+        }
+        .laundry-services .service-photo,
+        .laundry-services .service-info {
+            height: 300px;
+        }
+        .laundry-services .service-info {
+            padding: 20px;
+        }
+        .laundry-services .service-info h3 {
+            font-size: 21px;
+        }
+        .laundry-services .service-info p {
+            font-size: 14px;
+        }
+    }
+    </style>
+
+    {{-- PARTIAL VIEW: DAFTAR PAKET LAUNDRY (TUGAS EKSPLORASI QUERY BUILDER & ELOQUENT) --}}
+    @include('layouts.partials.packages', ['packages' => $packages ?? []])
+
+    <!--? Want To work -->
+    <section class="container">
+        <section class="wantToWork-area" data-background="{{ asset('assets/img/gallery/section_bg01.png') }}">                
+            <div class="wants-wrapper w-padding2">
+                <div class="row align-items-center justify-content-between">
+                    <div class="col-xl-8 col-lg-9 col-md-7">
+                        <div class="wantToWork-caption wantToWork-caption2">
+                            <h2>Butuh Laundry? Hubungi Kami!</h2>                                
+                            <p>Pesan layanan laundry dengan mudah dan praktis melalui WhatsApp.</p>                            
+                        </div>
                     </div>
-                    <h5 class="fw-bold mb-2">Cuci Komplit</h5>
-                    <p class="text-muted small mb-3">
-                        Mencakup proses cuci, pengeringan mesin, dan setrika uap rapi. Siap langsung pakai.
-                    </p>
-                    <span class="fw-bold text-primary fs-5 mt-auto">Mulai Rp 6.000 / Kg</span>
+                    <div class="col-xl-3 col-lg-3 col-md-5">
+                        <a href="https://wa.me/6281365649826"
+                           class="btn wantToWork-btn"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            <img src="{{ asset('assets/img/icon/call2.png') }}" alt="">
+                            Hubungi WhatsApp
+                        </a>
+                    </div>
                 </div>
             </div>
+        </section>
+    </section>
+    <!-- Want To work End -->
 
-            <!-- Layanan 2 -->
-            <div class="col-md-4">
-                <div class="card card-custom h-100 p-4 bg-white border">
-                    <div class="d-inline-flex align-items-center justify-content-center bg-success bg-opacity-10 text-success rounded-3 p-3 mb-4" style="width: 60px; height: 60px;">
-                        <i class="bi bi-lightning-charge fs-3"></i>
+    <!--? Company achievement Start -->
+    <section class="services-area section-padding40 fix">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-7 col-lg-8">
+                    <div class="section-tittle text-center mb-55">
+                        <span class="element">PENCAPAIAN KAMI</span>
+                        <h2>Komitmen Laundry Kita</h2>
                     </div>
-                    <h5 class="fw-bold mb-2">Express 1 Hari</h5>
-                    <p class="text-muted small mb-3">
-                        Layanan kilat selesai dalam hitungan jam untuk kebutuhan mendesak pakaian dinas atau kuliah.
-                    </p>
-                    <span class="fw-bold text-success fs-5 mt-auto">Mulai Rp 10.000 / Kg</span>
                 </div>
             </div>
-
-            <!-- Layanan 3 -->
-            <div class="col-md-4">
-                <div class="card card-custom h-100 p-4 bg-white border">
-                    <div class="d-inline-flex align-items-center justify-content-center bg-warning bg-opacity-10 text-warning rounded-3 p-3 mb-4" style="width: 60px; height: 60px;">
-                        <i class="bi bi-truck fs-3"></i>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-sm-6">
+                    <div class="single-cat text-center">
+                        <div class="cat-cap">
+                            <span>Bersih</span>
+                            <p>Pakaian pelanggan telah dicuci dengan bersih dan teliti.</p>                            
+                        </div>
                     </div>
-                    <h5 class="fw-bold mb-2">Antar Jemput Gratis</h5>
-                    <p class="text-muted small mb-3">
-                        Kurir kami siap menjemput cucian kotor ke tempat Anda dan mengantarkannya kembali setelah rapi.
-                    </p>
-                    <span class="fw-bold text-warning fs-5 mt-auto">Free Radius 3 KM</span>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6">
+                    <div class="single-cat text-center">
+                        <div class="cat-cap">
+                            <span>Praktis</span>
+                            <p>Lebih dari 300 pelanggan telah mempercayakan cucian mereka kepada kami.</p>                            
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6">
+                    <div class="single-cat text-center">
+                        <div class="cat-cap">
+                            <span>Terpercaya</span>
+                            <p>Kami berkomitmen memberikan hasil laundry yang bersih dan memuaskan.</p>                            
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="bottom-bt">
+                            <img src="{{ asset('assets/img/gallery/company-bg.png') }}" alt="">
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+    </section>
+    <!-- Company achievement End -->
 
-        <!-- Info Card Quiz Pertemuan 8 -->
-        <div class="mt-5 p-4 rounded-4 bg-primary bg-opacity-10 border border-primary border-opacity-25">
+    <!--? About Area  -->
+    <section id="about" class="about-area2 pb-bottom mt-30">
+        <div class="container">
             <div class="row align-items-center">
-                <div class="col-lg-8">
-                    <h5 class="fw-bold text-primary mb-1">
-                        <i class="bi bi-check2-circle me-1"></i> Halaman Tampilan Guest dengan PartialView
-                    </h5>
-                    <p class="text-muted mb-lg-0 small">
-                        Halaman ini menggunakan Layout Guest master (<code>layouts/guest.blade.php</code>) yang menyertakan Partial Views (<code>layouts/partials/navbar.blade.php</code> &amp; <code>layouts/partials/footer.blade.php</code>).
-                    </p>
+                <div class="col-lg-6 col-md-12">
+                    <div class="about-img">
+                        <img src="{{ asset('assets/img/gallery/laundry-about.png') }}"
+                             alt="Aktivitas mencuci dan melipat pakaian di Laundry Kita">
+                    </div>
                 </div>
-                <div class="col-lg-4 text-lg-end">
-                    <a href="{{ route('login') }}" class="btn btn-primary fw-semibold me-2">
-                        Halaman Login (/auth)
-                    </a>
-                    <a href="{{ route('register') }}" class="btn btn-outline-primary fw-semibold">
-                        Register (/register)
-                    </a>
+
+                <div class="col-lg-6 col-md-12">
+                    <div class="about-caption mb-50">
+                        <div class="section-tittle mb-25">
+                            <h2>Tentang Laundry Kita</h2>
+                        </div>
+                        <p class="mb-20">
+                            Laundry Kita hadir untuk memberikan layanan laundry yang praktis,
+                            bersih, dan terpercaya. Kami membantu merawat pakaianmu agar tetap
+                            bersih, wangi, dan nyaman digunakan.
+                        </p>
+                        <p class="mb-30">
+                            Nikmati kemudahan pemesanan, penjadwalan penjemputan, dan pemantauan
+                            status cucian dalam satu layanan.
+                        </p>
+                        <a href="#services" class="btn">Lihat Layanan</a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
-@endsection
+    </section>
+    <!-- About Area End -->
 
+    <!-- Form Pemesanan Laundry -->
+    <section id="form-pemesanan" class="order-section">
+        <div class="container">
+            <div class="order-heading">
+                <span>PEMESANAN</span>
+                <h2>Pesan Laundry Sekarang</h2>
+                <p>Isi detail pesananmu, kami siap membantu!</p>
+            </div>
+
+            {{-- Alert Notifikasi Sukses --}}
+            @if(session('success'))
+                <div style="background-color: #d1e7dd; color: #0f5132; border: 2px solid #0f5132; padding: 15px 20px; border-radius: 8px; margin-bottom: 20px; font-weight: bold; font-size: 16px; text-align: center;">
+                    ✅ {{ session('success') }}
+                </div>
+            @endif
+
+            <form id="laundryOrderForm" class="order-form bg-white p-4 p-md-5 rounded-4 shadow-sm" action="{{ route('pesanan.store') }}" method="POST">
+                @csrf
+
+                <div class="row g-3">
+                    <!-- Nama Lengkap -->
+                    <div class="col-md-6 mb-2">
+                        <label for="nama" class="form-label fw-semibold">Nama Lengkap</label>
+                        <input type="text" id="nama" name="name" class="form-control" placeholder="Masukkan nama lengkap" required>
+                    </div>
+
+                    <!-- Nomor WhatsApp -->
+                    <div class="col-md-6 mb-2">
+                        <label for="whatsapp" class="form-label fw-semibold">Nomor WhatsApp</label>
+                        <input type="tel" id="whatsapp" name="whatsapp" class="form-control" placeholder="Contoh: 0823xxxxxxxx" required>
+                    </div>
+
+                    <!-- Jenis Layanan -->
+                    <div class="col-md-6 mb-2">
+                        <label for="service" class="form-label fw-semibold">Jenis Layanan</label>
+                        <select class="form-select" id="service" name="service" required>
+                            <option value="">-- Pilih Layanan Laundry --</option>
+                            <option value="Cuci Komplit (Cuci + Kering + Setrika)">Cuci Komplit (Cuci + Kering + Setrika)</option>
+                            <option value="Cuci Lipat (Tanpa Setrika)">Cuci Lipat (Tanpa Setrika)</option>
+                            <option value="Setrika Saja">Setrika Saja</option>
+                            <option value="Laundry Satuan (Jas, Gaun, Bedcover, dll)">Laundry Satuan (Jas, Gaun, Bedcover, dll)</option>
+                            <option value="Dry Cleaning / Cuci Kering">Dry Cleaning / Cuci Kering</option>
+                            <option value="Perawatan Sepatu & Tas">Perawatan Sepatu & Tas</option>
+                        </select>
+                    </div>
+
+                    <!-- Tanggal Penjemputan -->
+                    <div class="col-md-6 mb-2">
+                        <label for="tanggal" class="form-label fw-semibold">Tanggal Penjemputan</label>
+                        <input type="date" id="tanggal" name="pickup_date" class="form-control" required>
+                    </div>
+
+                    <!-- Alamat Penjemputan -->
+                    <div class="col-12 mb-2">
+                        <label for="alamat" class="form-label fw-semibold">Alamat Penjemputan</label>
+                        <textarea id="alamat" name="address" class="form-control" rows="3" placeholder="Masukkan alamat lengkap" required></textarea>
+                    </div>
+
+                    <!-- Dropdown Pilih Metode Pembayaran -->
+                    <div class="col-12 mb-2">
+                        <label for="paymentMethodSelect" class="form-label fw-semibold">Metode Pembayaran</label>
+                        <select name="payment_method" id="paymentMethodSelect" class="form-select" onchange="toggleQrisImage()">
+                            <option value="Tunai / Cash" selected>Tunai / Cash</option>
+                            <option value="QRIS / E-Wallet">QRIS / E-Wallet</option>
+                            <option value="Transfer Bank">Transfer Bank</option>
+                        </select>
+                    </div>
+
+                    <!-- Gambar QRIS (Awalnya tersembunyi) -->
+                    <div class="col-12 mb-2 text-center d-none" id="qrisContainer">
+                        <p class="fw-bold mb-2 text-dark"><i class="bi bi-qr-code-scan me-1"></i> Scan QRIS untuk Pembayaran</p>
+                        <img src="{{ asset('assets/images/qris.jpg') }}" alt="QRIS Laundry Kita" class="img-fluid rounded border shadow-sm" style="max-width: 220px;">
+                        <p class="small text-muted mt-2 mb-0">Mendukung GoPay, OVO, Dana, ShopeePay, & Mobile Banking</p>
+                    </div>
+
+                    <!-- Tombol Simpan Pesanan -->
+                    <div class="col-12 mt-4 text-center">
+                        <button type="submit" class="btn btn-primary w-100 py-3 rounded-3 fw-bold fs-5 shadow-sm">Simpan Pesanan</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <style>
+    .order-section {
+        padding: 75px 0;
+        background: #f5f9fc;
+    }
+    .order-heading {
+        text-align: center;
+        margin-bottom: 35px;
+    }
+    .order-heading span {
+        color: #6480ff;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 2px;
+    }
+    .order-heading h2 {
+        color: #001f3f;
+        font-size: 32px;
+        font-weight: 700;
+        margin: 12px 0;
+    }
+    .order-heading p {
+        color: #64748b;
+    }
+    .order-form {
+        max-width: 800px;
+        margin: auto;
+        padding: 32px;
+        background: #fff;
+        border-radius: 16px;
+        box-shadow: 0 8px 30px rgba(0,31,63,.07);
+    }
+    .order-form label {
+        display: block;
+        margin-bottom: 8px;
+        color: #001f3f;
+        font-weight: 600;
+    }
+    .order-form .form-control {
+        min-height: 46px;
+        border: 1px solid #dce4ef;
+        border-radius: 8px;
+    }
+    .order-form textarea.form-control {
+        height: auto;
+    }
+    @media (max-width: 576px) {
+        .order-form {
+            padding: 20px;
+        }
+        .order-heading h2 {
+            font-size: 26px;
+        }
+    }
+    </style>
+
+    <script>
+    function toggleQrisImage() {
+        const selectElement = document.getElementById('paymentMethodSelect');
+        const qrisContainer = document.getElementById('qrisContainer');
+        
+        if (selectElement && qrisContainer) {
+            if (selectElement.value === 'QRIS / E-Wallet') {
+                qrisContainer.classList.remove('d-none');
+            } else {
+                qrisContainer.classList.add('d-none');
+            }
+        }
+    }
+    </script>
+
+    <!-- Location Section -->
+    <section id="location" class="location-section">
+        <div class="container">
+            <div class="location-heading">
+                <span class="location-label">TEMUKAN KAMI</span>
+                <h2>Lokasi Laundry Kita</h2>
+                <p>
+                    Kami siap membantu pakaianmu tetap bersih, wangi,
+                    dan nyaman digunakan.
+                </p>
+            </div>
+
+            <div class="location-card">
+                <div class="location-info">
+                    <div class="location-icon">⌖</div>
+                    <div>
+                        <h4>Kunjungi Laundry Kita</h4>
+                        <p>
+                            Jl. Rowo Sari No.11, Umban Sari, Rumbai,
+                            Kota Pekanbaru, Riau 28266
+                        </p>
+                    </div>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Jl.%20Rowo%20Sari%20No.11%2C%20Umban%20Sari%2C%20Rumbai%2C%20Kota%20Pekanbaru%2C%20Riau%2028266"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class="location-button">
+                        Buka Google Maps ↗
+                    </a>
+                </div>
+
+                <div class="location-map">
+                    <iframe
+                        src="https://maps.google.com/maps?q=Jl.%20Rowo%20Sari%20No.11%2C%20Umban%20Sari%2C%20Rumbai%2C%20Kota%20Pekanbaru%2C%20Riau%2028266&output=embed"
+                        width="100%"
+                        height="100%"
+                        style="border:0;"
+                        loading="lazy"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <style>
+    .location-section {
+        padding: 80px 0;
+        background: #f5f9fc;
+    }
+    .location-heading {
+        text-align: center;
+        margin-bottom: 38px;
+    }
+    .location-label {
+        display: inline-block;
+        color: #00a8e8;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 3px;
+        margin-bottom: 12px;
+    }
+    .location-heading h2 {
+        color: #001f3f;
+        font-size: 34px;
+        font-weight: 700;
+        margin-bottom: 14px;
+    }
+    .location-heading p {
+        color: #64748b;
+        font-size: 15px;
+        margin-bottom: 0;
+    }
+    .location-card {
+        display: grid;
+        grid-template-columns: 0.8fr 1.2fr;
+        background: #fff;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 12px 40px rgba(0, 31, 63, 0.08);
+    }
+    .location-info {
+        padding: 40px 32px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+    }
+    .location-icon {
+        width: 48px;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 14px;
+        background: #e8f7fd;
+        color: #00a8e8;
+        font-size: 30px;
+        margin-bottom: 24px;
+    }
+    .location-info h4 {
+        color: #001f3f;
+        font-size: 21px;
+        font-weight: 700;
+        margin-bottom: 14px;
+    }
+    .location-info p {
+        color: #64748b;
+        font-size: 14px;
+        line-height: 1.9;
+        margin-bottom: 24px;
+    }
+    .location-button {
+        display: inline-block;
+        background: #00a8e8;
+        color: #fff !important;
+        padding: 13px 22px;
+        border-radius: 9px;
+        font-size: 14px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: 0.2s;
+    }
+    .location-button:hover {
+        background: #001f3f;
+        color: #fff;
+    }
+    .location-map {
+        min-height: 380px;
+    }
+    .location-map iframe {
+        display: block;
+        min-height: 380px;
+    }
+    @media (max-width: 767px) {
+        .location-section {
+            padding: 55px 0;
+        }
+        .location-heading h2 {
+            font-size: 27px;
+        }
+        .location-card {
+            grid-template-columns: 1fr;
+        }
+        .location-info {
+            padding: 28px 24px;
+        }
+        .location-map,
+        .location-map iframe {
+            min-height: 300px;
+        }
+    }
+    </style>
+</main>
+@endsection

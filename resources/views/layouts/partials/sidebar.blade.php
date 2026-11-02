@@ -16,12 +16,25 @@
                     <i class="bi bi-people"></i> Kelola User
                 </a>
             </li>
+            
+            <li class="nav-header text-uppercase text-muted px-3 mt-3 mb-2 small fw-bold">Katalog Layanan</li>
             <li class="nav-item">
-                <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#newItemModal">
-                    <i class="bi bi-plus-circle"></i> Tambah Pesanan
+                <a href="{{ route('categories.index') }}" class="nav-link {{ Request::is('admin/categories*') ? 'active' : '' }}">
+                    <i class="bi bi-tags"></i> Kategori Layanan
                 </a>
             </li>
-            <li class="nav-header text-uppercase text-muted px-3 mt-3 mb-2 small fw-bold">Pengaturan</li>
+            <li class="nav-item">
+                <a href="{{ route('packages.index') }}" class="nav-link {{ Request::is('admin/packages*') ? 'active' : '' }}">
+                    <i class="bi bi-box-seam"></i> Paket Laundry
+                </a>
+            </li>
+
+            <li class="nav-header text-uppercase text-muted px-3 mt-3 mb-2 small fw-bold">Operasional</li>
+            <li class="nav-item">
+                <a href="{{ url('/pesan-laundry') }}" class="nav-link" target="_blank">
+                    <i class="bi bi-plus-circle"></i> Form Pesan Baru
+                </a>
+            </li>
             <li class="nav-item">
                 <a href="#" class="nav-link">
                     <i class="bi bi-gear"></i> Pengaturan Sistem
